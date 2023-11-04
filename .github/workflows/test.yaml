@@ -13,12 +13,12 @@ jobs:
 
       # 下载待修补的应用
       - name: Download novelapp
-        run: gh release download -O app.apk --repo cinit/QAuxiliary --pattern 'Fanqie-5.8.5.18.apk'
+        run: gh release download -O app.apk --repo AoEiuV020/HookFanqie --pattern 'Fanqie-5.8.5.18.apk'
 
       # 使用GitHub CLI下载模块最新Release版本
       - name: 下载模块
         run: |
-          gh release download -O hook.apk --repo cinit/QAuxiliary --pattern 'HookFanqie-5.8.5.18-hook.apk'
+          gh release download -O hook.apk --repo AoEiuV020/HookFanqie --pattern 'HookFanqie-5.8.5.18-hook.apk'
 
       # 修补
       - run: java -jar lspatch.jar app.apk -m hook.apk
