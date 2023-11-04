@@ -22,3 +22,12 @@ jobs:
 
       # 修补
       - run: java -jar lspatch.jar app.apk -m hook.apk
+
+      # 再次发布Release
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: app-360-lspatched.apk
+          tag_name: Release
+          name: patchRelease
+          append_body: true
