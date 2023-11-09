@@ -21,7 +21,7 @@ jobs:
 #          gh release download -O hook.apk --repo AoEiuV020/HookFanqie --pattern 'HookFanqie-5.8.5.18-hook.apk'
 
       # 修补
-      - run: java -jar jar-v0.5.1-392-release.jar app.apk -m patch.apk
+      - run: java -jar lspatch.jar app.apk -m hook.apk
 
       # 再次发布Release
       - name: Release
