@@ -24,6 +24,8 @@ jobs:
       - name: patch
         run: |
           java -jar lspatch.jar app.apk -m hook.apk
+        with:
+          context: .
 
       # 再次发布Release
       - name: Release
