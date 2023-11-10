@@ -23,8 +23,7 @@ jobs:
       # 修补
       - name: patch
         run: |
-#          java -jar lspatch.jar app.apk -m hook.apk
-          ls > t.txt
+          java -jar lspatch.jar app.apk -m hook.apk
 
 #      # 再次发布Release
 #      - name: Release
@@ -38,6 +37,6 @@ jobs:
       - name: Upload mappings
         uses: actions/upload-artifact@v3
         with:
-          name: mappings
+          name: app-360-lspatched
           path: |
-            t.txt
+            app-360-lspatched.apk
