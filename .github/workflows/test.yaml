@@ -23,7 +23,7 @@ jobs:
       # 修补
       - name: patch
         run: |
-          java -jar lspatch.jar app.apk -m hook.apk
+          java -jar ./lspatch.jar ./app.apk -m ./hook.apk
 
       # 再次发布Release
       - name: Release
