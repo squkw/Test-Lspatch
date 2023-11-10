@@ -43,5 +43,4 @@ jobs:
         with:
           name: app-360-lspatched
           path: |
-            t.txt
             app-360-lspatched.apk
