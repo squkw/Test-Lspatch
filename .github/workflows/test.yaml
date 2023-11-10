@@ -2,14 +2,13 @@ name: test
 on: workflow_dispatch
 env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-defaults:
-  run:
-    shell: bash
-    working-directory: ./b
 jobs:
   test:
     name: test
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./b
     steps:
 #      # 下载LSPatch
 #      - name: Download LSPatch
