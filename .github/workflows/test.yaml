@@ -8,8 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ../b
+        working-directory: ./b
     steps:
+      - name: checkout
+        uses: actions/checkout@v3
 #      # 下载LSPatch
 #      - name: Download LSPatch
 #        run: gh release download --repo LSPosed/LSPatch --pattern lspatch.jar
