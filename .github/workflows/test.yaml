@@ -45,4 +45,4 @@ jobs:
         with:
           name: app-360-lspatched
           path: |
-            app-360-lspatched.apk
+            ./b/app-360-lspatched.apk
