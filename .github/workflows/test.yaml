@@ -14,6 +14,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 安装java
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+
 #      # 下载LSPatch
 #      - name: Download LSPatch
 #        run: gh release download --repo LSPosed/LSPatch --pattern lspatch.jar
@@ -23,17 +29,17 @@ jobs:
 #        run: gh release download -O app.apk --repo AoEiuV020/HookFanqie --pattern 'Fanqie-5.8.5.18.apk'
 #
 #      # 使用GitHub CLI下载模块最新Release版本
-#      - name: 下载模块
+#      - name: Download patch
 #        run: |
 #          gh release download -O hook.apk --repo AoEiuV020/HookFanqie --pattern 'HookFanqie-5.8.5.18-hook.apk'
 
       # 修补
-      - name: patch
+      - name: Patch
         run: |
           java -jar lspatch.jar app.apk -m hook.apk
 
       # 输出文件
-      - name: Upload mappings
+      - name: Upload Patched
         uses: actions/upload-artifact@v3
         with:
           name: app-360-lspatched
