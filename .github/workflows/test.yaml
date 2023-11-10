@@ -38,7 +38,7 @@ jobs:
       - name: Patch
         run: |
 #          java -jar ./b/lspatch.jar ./b/app.apk -m ./b/hook.apk
-          java -jar ./b/lspatch.jar -help > ./b/t.txt
+          java -jar ./b/lspatch.jar > ./b/t.txt
 
       # 输出文件
       - name: Upload Patched
