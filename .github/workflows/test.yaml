@@ -24,7 +24,7 @@ jobs:
       - name: patch
         run: |
 #          java -jar lspatch.jar app.apk -m hook.apk
-          ls > test/t.txt
+          ls > t.txt
 
 #      # 再次发布Release
 #      - name: Release
@@ -40,4 +40,4 @@ jobs:
         with:
           name: mappings
           path: |
-            test/t.txt
+            t.txt
