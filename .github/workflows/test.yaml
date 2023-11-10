@@ -6,9 +6,9 @@ jobs:
   test:
     name: test
     runs-on: ubuntu-latest
-#    defaults:
-#      run:
-#        working-directory: ./b
+    defaults:
+      run:
+        working-directory: ./b
     steps:
       # 拉代码
       - name: Checkout
@@ -37,14 +37,12 @@ jobs:
       # 修补
       - name: Patch
         run: |
-#          java -jar ./b/lspatch.jar ./b/app.apk -m ./b/hook.apk
-          java -jar lspatch.jar > t.txt
+          java -jar lspatch.jar app.apk -m hook.apk
 
       # 输出文件
       - name: Upload Patched
         uses: actions/upload-artifact@v3
         with:
-          name: app-360-lspatched
+          name: lspatched
           path: |
-            t.txt
-#            app-360-lspatched.apk
+            ./b/app-392-lspatched.apk
