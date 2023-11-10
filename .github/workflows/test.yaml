@@ -6,9 +6,9 @@ jobs:
   test:
     name: test
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./b
+#    defaults:
+#      run:
+#        working-directory: ./b
     steps:
       # 拉代码
       - name: Checkout
@@ -37,7 +37,7 @@ jobs:
       # 修补
       - name: Patch
         run: |
-          java -jar lspatch.jar app.apk -m hook.apk
+          java -jar ./b/lspatch.jar ./b/app.apk -m ./b/hook.apk
 
       # 输出文件
       - name: Upload Patched
